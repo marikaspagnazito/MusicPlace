@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>MusicPlace</display-name>
+
+	<welcome-file-list>
+		<welcome-file>HomeView.jsp</welcome-file>
+	</welcome-file-list>
+
+
+
+	<servlet>
+		<servlet-name>AdminOrdiniControl</servlet-name>
+		<servlet-class>it.control.AdminOrdiniControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminOrdiniControl</servlet-name>
+		<url-pattern>/ordini</url-pattern>
+	</servlet-mapping>
+
+      <servlet>
+		<servlet-name>adminCatalogoControl</servlet-name>
+		<servlet-class>it.control.adminCatalogoControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminCatalogoControl</servlet-name>
+		<url-pattern>/catalogo</url-pattern>
+	</servlet-mapping>
+
+     <servlet>
+		<servlet-name>adminDettaglioCatalogoControl</servlet-name>
+		<servlet-class>it.control.adminDettaglioCatalogoControl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>adminDettaglioCatalogoControl</servlet-name>
+		<url-pattern>/catalogodett</url-pattern>
+	</servlet-mapping>
+
+	<filter>
+		<filter-name>AuthFilter</filter-name>
+		<filter-class>it.unisa.AuthFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>AuthFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+	</filter-mapping>
+
+
+</web-app>
+
